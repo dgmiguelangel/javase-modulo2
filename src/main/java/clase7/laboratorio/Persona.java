@@ -20,12 +20,19 @@ public class Persona {
 		this.apellido = apellido;
 		this.documento = documento;
 		this.fechaNacimiento = fechaNacimiento;
-	}
+	}	
+	
 	
 	public int calcularEdad() {
 		return Period.between(fechaNacimiento, LocalDate.now()).getYears();
 	}
+	
+	public boolean esMayorEdad() {
+		return calcularEdad() >= 18 ? true : false;
+	}
+	
 
+	
 	public String getNombre() {
 		return nombre;
 	}
